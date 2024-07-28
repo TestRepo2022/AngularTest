@@ -5,14 +5,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CustomerComponent } from './customer/customer.component';
 import { HeaderComponent } from './Header/Header.Component';
+import { FormsModule } from '@angular/forms';
+import { GenderformatPipe } from './utils/pipes/genderformat.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomerComponent,
-    HeaderComponent
+    HeaderComponent,
+    GenderformatPipe
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule
   ],
