@@ -1,0 +1,31 @@
+<p>Message: {{message}}</p>
+
+<div *ngIf="isadmin==1;then admin else employee"></div>
+
+<ng-template #admin>You are Admin: </ng-template>
+
+<ng-template #employee>You are Employee:</ng-template>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Age</td>
+            <td>Gender</td>
+            <td>Action</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cust of customers; index as i">
+            <td>{{cust.id}}</td>
+            <td>{{cust.name}}</td>
+            <!-- <td [style.color]="'red'">{{cust.age}}</td> -->
+            <!-- <td [ngStyle]="cust.age>30?{'color':'red'}:{color:'green'}">{{cust.age}}</td> -->
+            <td [ngStyle]="cust.age>30?Color1():Color2()">{{cust.age}}</td>
+
+            <td>{{cust.gender}}</td>
+            <td><a class="btn btn-info btn-sm" (click)="DeleteCustomer(i)">Delete</a></td>
+        </tr>
+    </tbody>
+</table>
