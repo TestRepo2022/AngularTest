@@ -1,0 +1,15 @@
+<div class="row">
+
+    <div class="col-4">
+      <ul>
+        <a href="#"  *ngFor="let ct of Categories" [routerLink]='["ProductList",ct.id]'>
+          {{ct.name}}
+        </a>
+      </ul>
+    
+    </div>
+    <div class="col-8">
+    <router-outlet></router-outlet>
+    </div>
+    
+    </div>

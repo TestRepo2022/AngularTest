@@ -11,6 +11,7 @@ export class CustomerComponent implements OnInit {
   public isadmin:number=1
   public customers:any
   public obj={"text-success":true,"bg-info":true,"myclass":true};
+  public searchText:string=''
   constructor() {
 this.customers=[
 {"id":1,"name":"Ajay Singh","age":23,"gender":1,amount:2000,dob:new Date("10-10-1999")},
@@ -25,7 +26,7 @@ this.customers=[
   ngOnInit(): void {
   }
 
-  public DeleteCustomer(index:number) {
+  public DeleteCustomer(index:number=0) {
     this.customers.splice(index,1)
   }
   public Color1(){
@@ -47,4 +48,7 @@ this.customers=[
     this.obj.myclass=false
     this.class1()
   }
+  changeByProperty() {
+    this.customers[0].name = "Aditya";
+}
 }
